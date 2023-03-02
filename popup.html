@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+    margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    } 
+    /* 에스터리스크 만큼은 그냥 만들어 준다. */
+
+    #root {
+      width: 100vw;
+      height: 300vh;
+      background-color: rgb(83, 83, 83);
+    }
+
+    #pop-up {
+      width: 300px;
+      height: 300px;
+      background-color: aqua;
+      position: fixed;
+      top: 100px;
+      left: 100px;
+    }
+
+    #root>section {
+      width: 100%;
+      height: 100vh;
+      border: 1px solid red;
+    }
+
+    #root>section:nth-child(1) {
+      background-color: blueviolet;
+    }
+
+    #root>section:nth-child(2) {
+      background-color: rgb(43, 226, 134);
+    }
+
+    #root>section:nth-child(3) {
+      background-color: rgb(156, 226, 43);
+    }
+
+    #pop-up>button {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <aside id="pop-up">
+    <button>close!</button>
+    <p>공옥재는 미남이다.</p>
+  </aside>
+
+  <div id="root">
+
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+
+  <script>
+
+    const popUP = document.getElementById("pop-up");
+    const clossButton = popUP.children[0];
+
+    const root = document.getElementById("root");
+    const ch = document.createElement("section");
+  
+    console.dir(popUP);
+    console.dir(document);
+
+    clossButton.addEventListener("click", function () {
+      clossButton.parentNode.style.display = 'none';
+
+      console.log(ch);
+      ch.textContent = "section";
+      root.children[0].appendChild(ch);
+      document.body.style.backgroundColor = "red";
+      
+
+
+    });
+
+    root.children[2].addEventListener("click", function () {
+      clossButton.parentNode.style.display = "";
+      ch.textContent = "";
+      root.children[0].appendChild(ch);
+
+    })
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

@@ -32,30 +32,44 @@
 
     let ddock = true;
 
-    for (let i = 0; i < menu.children.length; i++) {
+    // for (let i = 0; i < menu.children.length; i++) {
 
-      menu.children[i].style.color = "pink";
-      menu.children[i].addEventListener("click", function () {
-        menu.children[i].style.color = "blue";
-      });
   
-      if (ddock === true) {
-        menu.children[i].addEventListener("click", function () {
-          menu.children[i].style.color = "green";
+    //   if (ddock === true) {
+    //     menu.children[i].addEventListener("click", function () {
+    //       menu.children[i].style.color = "green";
 
-        });
-        ddock = false;
-      } else {
-        menu.children[i].addEventListener("click", function () {
-          menu.children[i].style.color = "yellow";
-        });
-        ddock = true;
+    //     });
+    //     ddock = false;
+    //   } else {
+    //     menu.children[i].addEventListener("click", function () {
+    //       menu.children[i].style.color = "yellow";
+    //     });
+    //     ddock = true;
 
-      }
+    //   }
 
 
 
-    };
+    // };
+      let sw = true;
+         menu.addEventListener("click", function () {
+          if(sw === true){
+            for (let i = 0; i < menu.children.length; i++) {
+              menu.children[i].style.color = "yellow";
+
+            }
+            sw = false;
+          }
+          else {
+            for (let i = 0; i < menu.children.length; i++) {
+              menu.children[i].style.color = "green";
+
+            }
+            sw  = true;
+          }
+         });
+
     // for(let i = menu.children.length; i >0 ; i++){
     //   menu.children[i].style.color = "pink";
     // } 위에 포문과 같음
