@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
+  <div id="root">
+    <ul id="menu">
+      <li>item-1</li>
+      <li>item-2</li>
+      <li>item-3</li>
+      <li>item-4</li>
+      <li>item-5</li>
+    </ul>
+  </div>
+
+
+  <script>
+    const menu = document.getElementById("menu");
+    const firstLi = document.querySelector("#menu > li:nth-child(1");
+    console.dir(menu.children);
+    console.log(firstLi);
+    // menu.children[0].style.color = "pink";
+    // menu.children[1].style.color = "pink";
+    // menu.children[2].style.color = "pink";
+    // menu.children[3].style.color = "pink";
+
+    let ddock = true;
+
+    for (let i = 0; i < menu.children.length; i++) {
+
+      menu.children[i].style.color = "pink";
+      menu.children[i].addEventListener("click", function () {
+        menu.children[i].style.color = "blue";
+      });
   
+      if (ddock === true) {
+        menu.children[i].addEventListener("click", function () {
+          menu.children[i].style.color = "green";
+
+        });
+        ddock = false;
+      } else {
+        menu.children[i].addEventListener("click", function () {
+          menu.children[i].style.color = "yellow";
+        });
+        ddock = true;
+
+      }
+
+
+
+    };
+    // for(let i = menu.children.length; i >0 ; i++){
+    //   menu.children[i].style.color = "pink";
+    // } 위에 포문과 같음
+
+
+  </script>
+
 </body>
+
 </html>
